@@ -1,0 +1,20 @@
+{
+	"name": "corpus/http",
+	"description": "HTTP Status Codes and Exceptions",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Jesse Donat",
+			"email": "donatj@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^7.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Corpus\\Http\\": "src/"
+		}
+	}
+}
