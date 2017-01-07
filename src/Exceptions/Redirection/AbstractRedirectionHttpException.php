@@ -14,10 +14,11 @@ abstract class AbstractRedirectionHttpException extends AbstractHttpException {
 	/**
 	 * AbstractRedirectionHttpException constructor.
 	 *
-	 * @param string $url
-	 * @param string $message
+	 * @param string     $url
+	 * @param string     $message
+	 * @param \Throwable $previous [optional] The previous throwable used for the exception chaining.
 	 */
-	public function __construct( $url, $message = "", \Exception $previous = null ) {
+	public function __construct( $url, $message = '', \Throwable $previous = null ) {
 		$this->url = $url;
 		parent::__construct($message, $previous);
 	}
