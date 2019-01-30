@@ -1,0 +1,23 @@
+<mddoc>
+	<docpage target="README.md">
+		<section title="Http">
+			<badge-poser type="version" />
+			<badge-poser type="license" />
+			<badge-travis name="CorpusPHP/Http" />
+
+			<text>HTTP Status Codes and Exceptions</text>
+
+			<section title="Requirements">
+				<composer-requires/>
+			</section>
+
+			<section title="Installing">
+				<composer-install/>
+			</section>
+
+			<section title="Documentation">
+				<recursivedirectory name="src"/>
+			</section>
+		</section>
+	</docpage>
+</mddoc>
