@@ -1,0 +1,36 @@
+<?php
+
+namespace Corpus\Http\Exceptions\Redirection;
+
+use Corpus\Http\Exceptions\AbstractHttpException;
+
+/**
+ * Base of 3xx Exceptions which include a "Location" header.
+ */
+abstract class AbstractLocationRedirectionHttpException extends AbstractHttpException {
+
+	/**
+	 * @var string
+	 */
+	protected $location;
+
+	/**
+	 * AbstractRedirectionHttpException constructor.
+	 *
+	 * @param string     $location
+	 * @param string     $message
+	 * @param \Throwable $previous [optional] The previous throwable used for the exception chaining.
+	 */
+	public function __construct( string $location, $message = '', \Throwable $previous = null ) {
+		$this->location = $location;
+		parent::__construct($message, $previous);
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getLocation() : string {
+		return $this->location;
+	}
+
+}
