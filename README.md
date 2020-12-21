@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/corpus/http/version)](https://packagist.org/packages/corpus/http)
 [![License](https://poser.pugx.org/corpus/http/license)](https://packagist.org/packages/corpus/http)
-[![Build Status](https://travis-ci.org/CorpusPHP/Http.svg?branch=master)](https://travis-ci.org/CorpusPHP/Http)
+[![Build Status](https://github.com/CorpusPHP/Http/workflows/CI/badge.svg?)](https://github.com/CorpusPHP/Http/actions?query=workflow%3ACI)
 
 
 HTTP Status Codes and Exceptions

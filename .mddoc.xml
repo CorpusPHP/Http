@@ -3,7 +3,7 @@
 		<section title="Http">
 			<badge-poser type="version" />
 			<badge-poser type="license" />
-			<badge-travis name="CorpusPHP/Http" />
+			<badge-github-action name="CorpusPHP/Http" workflow="CI" />
 
 			<text>HTTP Status Codes and Exceptions</text>
 
