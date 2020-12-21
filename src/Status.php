@@ -137,11 +137,9 @@ abstract class Status {
 
 	/**
 	 * Return the text for an HTTP status code.
-	 *
-	 * @param int $code
-	 * @return string|null
 	 */
 	public static function statusText( int $code ) : ?string {
 		return self::$statusText[$code] ?? null;
 	}
+
 }
