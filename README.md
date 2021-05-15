@@ -9,7 +9,7 @@ HTTP Status Codes and Exceptions
 
 ## Requirements
 
-- **php**: ^7.1
+- **php**: ^7.1 | ^8.0
 
 ## Installing
 
@@ -24,6 +24,19 @@ composer require 'corpus/http'
 ### Class: \Corpus\Http\Exceptions\AbstractHttpException
 
 Base Exception class all HTTP Exception Classes Extend
+
+#### Method: AbstractHttpException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.
+
+##### Parameters:
+
+- ***string*** `$message`
+- ***\Throwable*** | ***null*** `$previous`
 
 ### Class: \Corpus\Http\Exceptions\ClientError\AbstractClientErrorException
 
