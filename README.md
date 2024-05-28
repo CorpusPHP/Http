@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/corpus/http/version)](https://packagist.org/packages/corpus/http)
 [![License](https://poser.pugx.org/corpus/http/license)](https://packagist.org/packages/corpus/http)
-[![Build Status](https://github.com/CorpusPHP/Http/workflows/CI/badge.svg?)](https://github.com/CorpusPHP/Http/actions?query=workflow%3ACI)
+[![ci.yml](https://github.com/CorpusPHP/Http/actions/workflows/ci.yml/badge.svg)](https://github.com/CorpusPHP/Http/actions/workflows/ci.yml)
 
 
 HTTP Status Codes and Exceptions
@@ -31,12 +31,13 @@ Base Exception class all HTTP Exception Classes Extend
 function __construct([ $message = '' [, ?\Throwable $previous = null]])
 ```
 
-Construct the *HttpException.
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
 
 ##### Parameters:
 
 - ***string*** `$message`
-- ***\Throwable*** | ***null*** `$previous`
 
 ### Class: \Corpus\Http\Exceptions\ClientError\AbstractClientErrorException
 
@@ -149,6 +150,7 @@ class Status {
 	public const StatusContinue = 100;
 	public const SwitchingProtocols = 101;
 	public const Processing = 102;
+	public const EarlyHints = 103;
 	public const OK = 200;
 	public const Created = 201;
 	public const Accepted = 202;
@@ -186,9 +188,11 @@ class Status {
 	public const RequestedRangeNotSatisfiable = 416;
 	public const ExpectationFailed = 417;
 	public const Teapot = 418;
+	public const MisdirectedRequest = 421;
 	public const UnprocessableEntity = 422;
 	public const Locked = 423;
 	public const FailedDependency = 424;
+	public const TooEarly = 425;
 	public const UpgradeRequired = 426;
 	public const PreconditionRequired = 428;
 	public const TooManyRequests = 429;
@@ -205,7 +209,7 @@ class Status {
 	public const LoopDetected = 508;
 	public const NotExtended = 510;
 	public const NetworkAuthenticationRequired = 511;
-	public static $statusText = [self::StatusContinue => 'Continue', self::SwitchingProtocols => 'Switching Protocols', self::Processing => 'Processing', self::OK => 'OK', self::Created => 'Created', self::Accepted => 'Accepted', self::NonAuthoritativeInfo => 'Non-Authoritative Information', self::NoContent => 'No Content', self::ResetContent => 'Reset Content', self::PartialContent => 'Partial Content', self::MultiStatus => 'Multi-Status', self::AlreadyReported => 'Already Reported', self::IMUsed => 'IM Used', self::MultipleChoices => 'Multiple Choices', self::MovedPermanently => 'Moved Permanently', self::Found => 'Found', self::SeeOther => 'See Other', self::NotModified => 'Not Modified', self::UseProxy => 'Use Proxy', self::TemporaryRedirect => 'Temporary Redirect', self::PermanentRedirect => 'Permanent Redirect', self::BadRequest => 'Bad Request', self::Unauthorized => 'Unauthorized', self::PaymentRequired => 'Payment Required', self::Forbidden => 'Forbidden', self::NotFound => 'Not Found', self::MethodNotAllowed => 'Method Not Allowed', self::NotAcceptable => 'Not Acceptable', self::ProxyAuthRequired => 'Proxy Authentication Required', self::RequestTimeout => 'Request Timeout', self::Conflict => 'Conflict', self::Gone => 'Gone', self::LengthRequired => 'Length Required', self::PreconditionFailed => 'Precondition Failed', self::RequestEntityTooLarge => 'Request Entity Too Large', self::RequestURITooLong => 'Request URI Too Long', self::UnsupportedMediaType => 'Unsupported Media Type', self::RequestedRangeNotSatisfiable => 'Requested Range Not Satisfiable', self::ExpectationFailed => 'Expectation Failed', self::Teapot => 'I\'m a teapot', self::UnprocessableEntity => 'Unprocessable Entity', self::Locked => 'Locked', self::FailedDependency => 'Failed Dependency', self::UpgradeRequired => 'Upgrade Required', self::PreconditionRequired => 'Precondition Required', self::TooManyRequests => 'Too Many Requests', self::RequestHeaderFieldsTooLarge => 'Request Header Fields Too Large', self::UnavailableForLegalReasons => 'Unavailable For Legal Reasons', self::InternalServerError => 'Internal Server Error', self::NotImplemented => 'Not Implemented', self::BadGateway => 'Bad Gateway', self::ServiceUnavailable => 'Service Unavailable', self::GatewayTimeout => 'Gateway Timeout', self::HTTPVersionNotSupported => 'HTTP Version Not Supported', self::VariantAlsoNegotiates => 'Variant Also Negotiates', self::InsufficientStorage => 'Insufficient Storage', self::LoopDetected => 'Loop Detected', self::NotExtended => 'Not Extended', self::NetworkAuthenticationRequired => 'Network Authentication Required'];
+	public static $statusText = [self::StatusContinue => 'Continue', self::SwitchingProtocols => 'Switching Protocols', self::Processing => 'Processing', self::EarlyHints => 'Early Hints', self::OK => 'OK', self::Created => 'Created', self::Accepted => 'Accepted', self::NonAuthoritativeInfo => 'Non-Authoritative Information', self::NoContent => 'No Content', self::ResetContent => 'Reset Content', self::PartialContent => 'Partial Content', self::MultiStatus => 'Multi-Status', self::AlreadyReported => 'Already Reported', self::IMUsed => 'IM Used', self::MultipleChoices => 'Multiple Choices', self::MovedPermanently => 'Moved Permanently', self::Found => 'Found', self::SeeOther => 'See Other', self::NotModified => 'Not Modified', self::UseProxy => 'Use Proxy', self::TemporaryRedirect => 'Temporary Redirect', self::PermanentRedirect => 'Permanent Redirect', self::BadRequest => 'Bad Request', self::Unauthorized => 'Unauthorized', self::PaymentRequired => 'Payment Required', self::Forbidden => 'Forbidden', self::NotFound => 'Not Found', self::MethodNotAllowed => 'Method Not Allowed', self::NotAcceptable => 'Not Acceptable', self::ProxyAuthRequired => 'Proxy Authentication Required', self::RequestTimeout => 'Request Timeout', self::Conflict => 'Conflict', self::Gone => 'Gone', self::LengthRequired => 'Length Required', self::PreconditionFailed => 'Precondition Failed', self::RequestEntityTooLarge => 'Request Entity Too Large', self::RequestURITooLong => 'Request URI Too Long', self::UnsupportedMediaType => 'Unsupported Media Type', self::RequestedRangeNotSatisfiable => 'Requested Range Not Satisfiable', self::ExpectationFailed => 'Expectation Failed', self::Teapot => 'I\'m a teapot', self::MisdirectedRequest => 'Misdirected Request', self::UnprocessableEntity => 'Unprocessable Entity', self::Locked => 'Locked', self::FailedDependency => 'Failed Dependency', self::TooEarly => 'Too Early', self::UpgradeRequired => 'Upgrade Required', self::PreconditionRequired => 'Precondition Required', self::TooManyRequests => 'Too Many Requests', self::RequestHeaderFieldsTooLarge => 'Request Header Fields Too Large', self::UnavailableForLegalReasons => 'Unavailable For Legal Reasons', self::InternalServerError => 'Internal Server Error', self::NotImplemented => 'Not Implemented', self::BadGateway => 'Bad Gateway', self::ServiceUnavailable => 'Service Unavailable', self::GatewayTimeout => 'Gateway Timeout', self::HTTPVersionNotSupported => 'HTTP Version Not Supported', self::VariantAlsoNegotiates => 'Variant Also Negotiates', self::InsufficientStorage => 'Insufficient Storage', self::LoopDetected => 'Loop Detected', self::NotExtended => 'Not Extended', self::NetworkAuthenticationRequired => 'Network Authentication Required'];
 }
 ```
 

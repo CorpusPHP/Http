@@ -3,7 +3,7 @@
 		<section title="Http">
 			<badge-poser type="version" />
 			<badge-poser type="license" />
-			<badge-github-action name="CorpusPHP/Http" workflow="CI" />
+			<badge-github-action name="CorpusPHP/Http" workflow-file="ci.yml" />
 
 			<text>HTTP Status Codes and Exceptions</text>
 
@@ -16,7 +16,7 @@
 			</section>
 
 			<section title="Documentation">
-				<recursivedirectory name="src"/>
+				<recursive-directory name="src"/>
 			</section>
 		</section>
 	</docpage>
