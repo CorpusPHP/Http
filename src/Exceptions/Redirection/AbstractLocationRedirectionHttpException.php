@@ -17,10 +17,9 @@ abstract class AbstractLocationRedirectionHttpException extends AbstractHttpExce
 	/**
 	 * AbstractRedirectionHttpException constructor.
 	 *
-	 * @param string     $message
-	 * @param \Throwable $previous [optional] The previous throwable used for the exception chaining.
+	 * @param \Throwable|null $previous [optional] The previous throwable used for the exception chaining.
 	 */
-	public function __construct( string $location, $message = '', ?\Throwable $previous = null ) {
+	public function __construct( string $location, string $message = '', ?\Throwable $previous = null ) {
 		$this->location = $location;
 
 		parent::__construct($message, $previous);
