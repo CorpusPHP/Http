@@ -8,7 +8,7 @@ fix: cbf
 	vendor/bin/php-cs-fixer fix
 
 .PHONY: test
-test: cs
+test: cs phpstan
 	vendor/bin/phpunit
 
 .PHONY: cs
@@ -18,3 +18,7 @@ cs:
 .PHONY: cbf
 cbf:
 	vendor/bin/phpcbf
+
+.PHONY: phpstan
+phpstan:
+	vendor/bin/phpstan analyse

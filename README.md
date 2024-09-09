@@ -9,7 +9,7 @@ HTTP Status Codes and Exceptions
 
 ## Requirements
 
-- **php**: ^7.1 | ^8.0
+- **php**: ^7.2 | ^8.0
 
 ## Installing
 
@@ -21,7 +21,7 @@ composer require 'corpus/http'
 
 ## Documentation
 
-### Class: \Corpus\Http\Exceptions\AbstractHttpException
+### Class: Corpus\Http\Exceptions\AbstractHttpException
 
 Base Exception class all HTTP Exception Classes Extend
 
@@ -39,11 +39,11 @@ Use the HTTP Status code as the base exceptions code.
 
 - ***string*** `$message`
 
-### Class: \Corpus\Http\Exceptions\ClientError\AbstractClientErrorException
+### Class: Corpus\Http\Exceptions\ClientError\AbstractClientErrorException
 
 Base of Exceptions Representing The 4xx Class
 
-### Class: \Corpus\Http\Exceptions\ClientError\BadRequestException
+### Class: Corpus\Http\Exceptions\ClientError\BadRequestException
 
 #### Method: BadRequestException->getHttpStatusCode
 
@@ -51,7 +51,7 @@ Base of Exceptions Representing The 4xx Class
 function getHttpStatusCode() : int
 ```
 
-### Class: \Corpus\Http\Exceptions\ClientError\ForbiddenException
+### Class: Corpus\Http\Exceptions\ClientError\ForbiddenException
 
 #### Method: ForbiddenException->getHttpStatusCode
 
@@ -59,7 +59,7 @@ function getHttpStatusCode() : int
 function getHttpStatusCode() : int
 ```
 
-### Class: \Corpus\Http\Exceptions\ClientError\NotFoundException
+### Class: Corpus\Http\Exceptions\ClientError\NotFoundException
 
 #### Method: NotFoundException->getHttpStatusCode
 
@@ -67,7 +67,7 @@ function getHttpStatusCode() : int
 function getHttpStatusCode() : int
 ```
 
-### Class: \Corpus\Http\Exceptions\ClientError\UnauthorizedException
+### Class: Corpus\Http\Exceptions\ClientError\UnauthorizedException
 
 #### Method: UnauthorizedException->getHttpStatusCode
 
@@ -75,7 +75,7 @@ function getHttpStatusCode() : int
 function getHttpStatusCode() : int
 ```
 
-### Class: \Corpus\Http\Exceptions\Redirection\AbstractLocationRedirectionHttpException
+### Class: Corpus\Http\Exceptions\Redirection\AbstractLocationRedirectionHttpException
 
 Base of 3xx Exceptions which include a "Location" header.
 
@@ -96,11 +96,11 @@ AbstractRedirectionHttpException constructor.
 
 #### Undocumented Method: `AbstractLocationRedirectionHttpException->getLocation()`
 
-### Class: \Corpus\Http\Exceptions\Redirection\AbstractRedirectionHttpException
+### Class: Corpus\Http\Exceptions\Redirection\AbstractRedirectionHttpException
 
 Base of Exceptions Representing The 3xx Class
 
-### Class: \Corpus\Http\Exceptions\Redirection\FoundException
+### Class: Corpus\Http\Exceptions\Redirection\FoundException
 
 #### Method: FoundException->getHttpStatusCode
 
@@ -108,7 +108,7 @@ Base of Exceptions Representing The 3xx Class
 function getHttpStatusCode() : int
 ```
 
-### Class: \Corpus\Http\Exceptions\Redirection\SeeOtherException
+### Class: Corpus\Http\Exceptions\Redirection\SeeOtherException
 
 #### Method: SeeOtherException->getHttpStatusCode
 
@@ -116,11 +116,11 @@ function getHttpStatusCode() : int
 function getHttpStatusCode() : int
 ```
 
-### Class: \Corpus\Http\Exceptions\ServerError\AbstractServerErrorException
+### Class: Corpus\Http\Exceptions\ServerError\AbstractServerErrorException
 
 Base of Exceptions Representing The 5xx Class
 
-### Class: \Corpus\Http\Exceptions\ServerError\InternalServerErrorException
+### Class: Corpus\Http\Exceptions\ServerError\InternalServerErrorException
 
 #### Method: InternalServerErrorException->getHttpStatusCode
 
@@ -128,11 +128,11 @@ Base of Exceptions Representing The 5xx Class
 function getHttpStatusCode() : int
 ```
 
-### Class: \Corpus\Http\Exceptions\Success\AbstractSuccessException
+### Class: Corpus\Http\Exceptions\Success\AbstractSuccessException
 
 Base of Exceptions Representing The 2xx Class
 
-### Class: \Corpus\Http\Exceptions\Success\NoContentException
+### Class: Corpus\Http\Exceptions\Success\NoContentException
 
 #### Method: NoContentException->getHttpStatusCode
 
@@ -140,7 +140,7 @@ Base of Exceptions Representing The 2xx Class
 function getHttpStatusCode() : int
 ```
 
-### Class: \Corpus\Http\Status
+### Class: Corpus\Http\Status
 
 ```php
 <?php
@@ -209,6 +209,9 @@ class Status {
 	public const LoopDetected = 508;
 	public const NotExtended = 510;
 	public const NetworkAuthenticationRequired = 511;
+	/**
+	 * @var array<int,string>
+	 */
 	public static $statusText = [self::StatusContinue => 'Continue', self::SwitchingProtocols => 'Switching Protocols', self::Processing => 'Processing', self::EarlyHints => 'Early Hints', self::OK => 'OK', self::Created => 'Created', self::Accepted => 'Accepted', self::NonAuthoritativeInfo => 'Non-Authoritative Information', self::NoContent => 'No Content', self::ResetContent => 'Reset Content', self::PartialContent => 'Partial Content', self::MultiStatus => 'Multi-Status', self::AlreadyReported => 'Already Reported', self::IMUsed => 'IM Used', self::MultipleChoices => 'Multiple Choices', self::MovedPermanently => 'Moved Permanently', self::Found => 'Found', self::SeeOther => 'See Other', self::NotModified => 'Not Modified', self::UseProxy => 'Use Proxy', self::TemporaryRedirect => 'Temporary Redirect', self::PermanentRedirect => 'Permanent Redirect', self::BadRequest => 'Bad Request', self::Unauthorized => 'Unauthorized', self::PaymentRequired => 'Payment Required', self::Forbidden => 'Forbidden', self::NotFound => 'Not Found', self::MethodNotAllowed => 'Method Not Allowed', self::NotAcceptable => 'Not Acceptable', self::ProxyAuthRequired => 'Proxy Authentication Required', self::RequestTimeout => 'Request Timeout', self::Conflict => 'Conflict', self::Gone => 'Gone', self::LengthRequired => 'Length Required', self::PreconditionFailed => 'Precondition Failed', self::RequestEntityTooLarge => 'Request Entity Too Large', self::RequestURITooLong => 'Request URI Too Long', self::UnsupportedMediaType => 'Unsupported Media Type', self::RequestedRangeNotSatisfiable => 'Requested Range Not Satisfiable', self::ExpectationFailed => 'Expectation Failed', self::Teapot => 'I\'m a teapot', self::MisdirectedRequest => 'Misdirected Request', self::UnprocessableEntity => 'Unprocessable Entity', self::Locked => 'Locked', self::FailedDependency => 'Failed Dependency', self::TooEarly => 'Too Early', self::UpgradeRequired => 'Upgrade Required', self::PreconditionRequired => 'Precondition Required', self::TooManyRequests => 'Too Many Requests', self::RequestHeaderFieldsTooLarge => 'Request Header Fields Too Large', self::UnavailableForLegalReasons => 'Unavailable For Legal Reasons', self::InternalServerError => 'Internal Server Error', self::NotImplemented => 'Not Implemented', self::BadGateway => 'Bad Gateway', self::ServiceUnavailable => 'Service Unavailable', self::GatewayTimeout => 'Gateway Timeout', self::HTTPVersionNotSupported => 'HTTP Version Not Supported', self::VariantAlsoNegotiates => 'Variant Also Negotiates', self::InsufficientStorage => 'Insufficient Storage', self::LoopDetected => 'Loop Detected', self::NotExtended => 'Not Extended', self::NetworkAuthenticationRequired => 'Network Authentication Required'];
 }
 ```
@@ -221,7 +224,7 @@ function statusText(int $code) : ?string
 
 Return the text for an HTTP status code.
 
-### Class: \Corpus\Http\StatusAwareInterface
+### Class: Corpus\Http\StatusAwareInterface
 
 #### Method: StatusAwareInterface->getHttpStatusCode
 

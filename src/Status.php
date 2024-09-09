@@ -72,6 +72,7 @@ abstract class Status {
 	public const NotExtended                   = 510; // RFC 2774, 7
 	public const NetworkAuthenticationRequired = 511; // RFC 6585, 6
 
+	/** @var array<int,string> */
 	public static $statusText = [
 		self::StatusContinue     => 'Continue',
 		self::SwitchingProtocols => 'Switching Protocols',
