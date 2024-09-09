@@ -9,7 +9,7 @@ HTTP Status Codes and Exceptions
 
 ## Requirements
 
-- **php**: ^7.2 | ^8.0
+- **php**: ^7.3 | ^8.0
 
 ## Installing
 
@@ -62,6 +62,14 @@ function getHttpStatusCode() : int
 ### Class: Corpus\Http\Exceptions\ClientError\NotFoundException
 
 #### Method: NotFoundException->getHttpStatusCode
+
+```php
+function getHttpStatusCode() : int
+```
+
+### Class: Corpus\Http\Exceptions\ClientError\TooManyRequestsException
+
+#### Method: TooManyRequestsException->getHttpStatusCode
 
 ```php
 function getHttpStatusCode() : int
