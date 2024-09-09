@@ -67,6 +67,14 @@ function getHttpStatusCode() : int
 function getHttpStatusCode() : int
 ```
 
+### Class: Corpus\Http\Exceptions\ClientError\TooManyRequestsException
+
+#### Method: TooManyRequestsException->getHttpStatusCode
+
+```php
+function getHttpStatusCode() : int
+```
+
 ### Class: Corpus\Http\Exceptions\ClientError\UnauthorizedException
 
 #### Method: UnauthorizedException->getHttpStatusCode
