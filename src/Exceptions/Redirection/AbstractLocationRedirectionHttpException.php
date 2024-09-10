@@ -9,9 +9,7 @@ use Corpus\Http\Exceptions\AbstractHttpException;
  */
 abstract class AbstractLocationRedirectionHttpException extends AbstractHttpException {
 
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $location;
 
 	/**

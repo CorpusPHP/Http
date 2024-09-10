@@ -12,7 +12,9 @@ class AbstractLocationRedirectionHttpExceptionTest extends TestCase {
 			public function getHttpStatusCode() : int {
 				return 302;
 			}
+
 		};
+
 		$this->assertSame(302, $e->getHttpStatusCode());
 		$this->assertSame('http://www.example.com', $e->getLocation());
 		$this->assertSame('found it', $e->getMessage());

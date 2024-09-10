@@ -39,9 +39,43 @@ Use the HTTP Status code as the base exceptions code.
 
 - ***string*** `$message`
 
+---
+
+#### Method: AbstractHttpException->getHttpStatusCode
+
+```php
+function getHttpStatusCode() : int
+```
+
+Get the HTTP Status Code the Exception Represents
+
 ### Class: Corpus\Http\Exceptions\ClientError\AbstractClientErrorException
 
 Base of Exceptions Representing The 4xx Class
+
+#### Method: AbstractClientErrorException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
+
+---
+
+#### Method: AbstractClientErrorException->getHttpStatusCode
+
+```php
+function getHttpStatusCode() : int
+```
+
+Get the HTTP Status Code the Exception Represents
 
 ### Class: Corpus\Http\Exceptions\ClientError\BadRequestException
 
@@ -51,6 +85,24 @@ Base of Exceptions Representing The 4xx Class
 function getHttpStatusCode() : int
 ```
 
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: BadRequestException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
+
 ### Class: Corpus\Http\Exceptions\ClientError\ForbiddenException
 
 #### Method: ForbiddenException->getHttpStatusCode
@@ -58,6 +110,24 @@ function getHttpStatusCode() : int
 ```php
 function getHttpStatusCode() : int
 ```
+
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: ForbiddenException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
 
 ### Class: Corpus\Http\Exceptions\ClientError\NotFoundException
 
@@ -67,6 +137,24 @@ function getHttpStatusCode() : int
 function getHttpStatusCode() : int
 ```
 
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: NotFoundException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
+
 ### Class: Corpus\Http\Exceptions\ClientError\TooManyRequestsException
 
 #### Method: TooManyRequestsException->getHttpStatusCode
@@ -74,6 +162,24 @@ function getHttpStatusCode() : int
 ```php
 function getHttpStatusCode() : int
 ```
+
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: TooManyRequestsException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
 
 ### Class: Corpus\Http\Exceptions\ClientError\UnauthorizedException
 
@@ -83,6 +189,24 @@ function getHttpStatusCode() : int
 function getHttpStatusCode() : int
 ```
 
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: UnauthorizedException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
+
 ### Class: Corpus\Http\Exceptions\Redirection\AbstractLocationRedirectionHttpException
 
 Base of 3xx Exceptions which include a "Location" header.
@@ -90,23 +214,60 @@ Base of 3xx Exceptions which include a "Location" header.
 #### Method: AbstractLocationRedirectionHttpException->__construct
 
 ```php
-function __construct(string $location [, $message = '' [, ?\Throwable $previous = null]])
+function __construct(string $location [, string $message = '' [, ?\Throwable $previous = null]])
 ```
 
 AbstractRedirectionHttpException constructor.
 
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
 ##### Parameters:
 
-- ***string*** `$message`
-- ***\Throwable*** `$previous` - [optional] The previous throwable used for the exception chaining.
+- ***\Throwable*** | ***null*** `$previous` - [optional] The previous throwable used for the exception chaining.
 
 ---
 
 #### Undocumented Method: `AbstractLocationRedirectionHttpException->getLocation()`
 
+---
+
+#### Method: AbstractLocationRedirectionHttpException->getHttpStatusCode
+
+```php
+function getHttpStatusCode() : int
+```
+
+Get the HTTP Status Code the Exception Represents
+
 ### Class: Corpus\Http\Exceptions\Redirection\AbstractRedirectionHttpException
 
 Base of Exceptions Representing The 3xx Class
+
+#### Method: AbstractRedirectionHttpException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
+
+---
+
+#### Method: AbstractRedirectionHttpException->getHttpStatusCode
+
+```php
+function getHttpStatusCode() : int
+```
+
+Get the HTTP Status Code the Exception Represents
 
 ### Class: Corpus\Http\Exceptions\Redirection\FoundException
 
@@ -116,6 +277,30 @@ Base of Exceptions Representing The 3xx Class
 function getHttpStatusCode() : int
 ```
 
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: FoundException->__construct
+
+```php
+function __construct(string $location [, string $message = '' [, ?\Throwable $previous = null]])
+```
+
+AbstractRedirectionHttpException constructor.
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***\Throwable*** | ***null*** `$previous` - [optional] The previous throwable used for the exception chaining.
+
+---
+
+#### Undocumented Method: `FoundException->getLocation()`
+
 ### Class: Corpus\Http\Exceptions\Redirection\SeeOtherException
 
 #### Method: SeeOtherException->getHttpStatusCode
@@ -124,9 +309,57 @@ function getHttpStatusCode() : int
 function getHttpStatusCode() : int
 ```
 
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: SeeOtherException->__construct
+
+```php
+function __construct(string $location [, string $message = '' [, ?\Throwable $previous = null]])
+```
+
+AbstractRedirectionHttpException constructor.
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***\Throwable*** | ***null*** `$previous` - [optional] The previous throwable used for the exception chaining.
+
+---
+
+#### Undocumented Method: `SeeOtherException->getLocation()`
+
 ### Class: Corpus\Http\Exceptions\ServerError\AbstractServerErrorException
 
 Base of Exceptions Representing The 5xx Class
+
+#### Method: AbstractServerErrorException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
+
+---
+
+#### Method: AbstractServerErrorException->getHttpStatusCode
+
+```php
+function getHttpStatusCode() : int
+```
+
+Get the HTTP Status Code the Exception Represents
 
 ### Class: Corpus\Http\Exceptions\ServerError\InternalServerErrorException
 
@@ -136,9 +369,51 @@ Base of Exceptions Representing The 5xx Class
 function getHttpStatusCode() : int
 ```
 
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: InternalServerErrorException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
+
 ### Class: Corpus\Http\Exceptions\Success\AbstractSuccessException
 
 Base of Exceptions Representing The 2xx Class
+
+#### Method: AbstractSuccessException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
+
+---
+
+#### Method: AbstractSuccessException->getHttpStatusCode
+
+```php
+function getHttpStatusCode() : int
+```
+
+Get the HTTP Status Code the Exception Represents
 
 ### Class: Corpus\Http\Exceptions\Success\NoContentException
 
@@ -147,6 +422,24 @@ Base of Exceptions Representing The 2xx Class
 ```php
 function getHttpStatusCode() : int
 ```
+
+Get the HTTP Status Code the Exception Represents
+
+---
+
+#### Method: NoContentException->__construct
+
+```php
+function __construct([ $message = '' [, ?\Throwable $previous = null]])
+```
+
+Construct the *HttpException.  
+  
+Use the HTTP Status code as the base exceptions code.
+
+##### Parameters:
+
+- ***string*** `$message`
 
 ### Class: Corpus\Http\Status
 

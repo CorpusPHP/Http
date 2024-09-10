@@ -1,4 +1,5 @@
 <mddoc>
+	<autoloader type="psr4" root="src" namespace="Corpus\Http"/>
 	<docpage target="README.md">
 		<section title="Http">
 			<badge-poser type="version" />
