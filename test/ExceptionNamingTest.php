@@ -15,13 +15,18 @@ class ExceptionNamingTest extends TestCase {
 			require_once $file;
 		}
 
-		$classes = array_filter(get_declared_classes(), function ($class) {
+		$classes = array_filter(get_declared_classes(), function ( string $class ) {
+			// Skip anonymous classes
+			if( strpos($class, '@') !== false ) {
+				return false;
+			}
+
 			return is_subclass_of($class, AbstractHttpException::class);
 		});
 
-		foreach($classes as $className) {
+		foreach( $classes as $className ) {
 			$reflect = new \ReflectionClass($className);
-			if($reflect->isAbstract()) {
+			if( $reflect->isAbstract() ) {
 				continue;
 			}
 
@@ -37,7 +42,7 @@ class ExceptionNamingTest extends TestCase {
 
 			$this->assertSame(
 				constant(Status::class . '::' . $constName),
-				$inst->getHttpStatusCode()
+				$inst->getHttpStatusCode(),
 			);
 		}
 	}
