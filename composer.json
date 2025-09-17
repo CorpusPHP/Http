@@ -19,7 +19,7 @@
 	},
 	"require-dev": {
 		"corpus/coding-standard": "^0.10.0",
-		"friendsofphp/php-cs-fixer": "^3.4",
+		"friendsofphp/php-cs-fixer": "^3.87",
 		"phpstan/phpstan": "^2.1",
 		"phpunit/phpunit": "^9.6",
 		"squizlabs/php_codesniffer": "^4.0"
