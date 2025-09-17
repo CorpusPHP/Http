@@ -9,7 +9,7 @@ HTTP Status Codes and Exceptions
 
 ## Requirements
 
-- **php**: ^7.3 | ^8.0
+- **php**: ^7.4 || ^8.0
 
 ## Installing
 
