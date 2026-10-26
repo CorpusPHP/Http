@@ -23,6 +23,9 @@ abstract class AbstractLocationRedirectionHttpException extends AbstractHttpExce
 		parent::__construct($message, $previous);
 	}
 
+	/**
+	 * Get the redirect location.
+	 */
 	public function getLocation() : string {
 		return $this->location;
 	}

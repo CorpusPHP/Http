@@ -239,7 +239,7 @@ Use the HTTP Status code as the base exceptions code.
 function getLocation(): string
 ```
 
-Undocumented
+Get the redirect location.
 
 ---
 
@@ -319,7 +319,7 @@ Use the HTTP Status code as the base exceptions code.
 function getLocation(): string
 ```
 
-Undocumented
+Get the redirect location.
 
 ### Class: Corpus\Http\Exceptions\Redirection\SeeOtherException
 
@@ -361,7 +361,7 @@ Use the HTTP Status code as the base exceptions code.
 function getLocation(): string
 ```
 
-Undocumented
+Get the redirect location.
 
 ### Class: Corpus\Http\Exceptions\ServerError\AbstractServerErrorException
 
