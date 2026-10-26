@@ -10,7 +10,7 @@
 		}
 	],
 	"require": {
-		"php": "^7.4 || ^8.0"
+		"php": "^8.2"
 	},
 	"autoload": {
 		"psr-4": {
@@ -19,14 +19,16 @@
 	},
 	"require-dev": {
 		"corpus/coding-standard": "^0.10.0",
-		"friendsofphp/php-cs-fixer": "^3.87",
-		"phpstan/phpstan": "^2.1",
-		"phpunit/phpunit": "^9.6",
+		"donatj/mddoc": "^0.14",
+		"friendsofphp/php-cs-fixer": "^3.95",
+		"phpstan/phpstan": "^2.3",
+		"phpunit/phpunit": "^11.5",
 		"squizlabs/php_codesniffer": "^4.0"
 	},
 	"config": {
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
-		}
+		},
+		"sort-packages": true
 	}
 }
